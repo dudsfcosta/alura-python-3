@@ -1,0 +1,17 @@
+1. Herança
+    1.1. Criando a classe ItemCardapio
+        In this study, the instructors (Laís and Guilherme) create three classes: ItemCardapio, Prato, and Bebida. They
+        define the initialization method for ItemCardapio but only specify initial parameters for Prato and Bebida. The
+        teachers note that both Prato and Bebida have identical properties to ItemCardapio, which leads to the next
+        topic's focus on inheritance.
+
+    1.2. Herança
+        Guilherme explains that to makePratoa child ofItemCardapio, it’s needed to include the parent class name in pa-
+        rentheses. Within the child's__init__function, use super().__init__(var1, var2) to initialize the parent class
+        variables. However, any unique properties of the child class should be initialized separately.
+
+    1.3. Acessando os itens do cardápio
+        With both classes ready for use, Laís imports them into the app class and creates instances: watermelon juice
+        using the Bebida class, and bread using the Prato class. Guilherme suggests improving the output by defining a
+        new printing method. He edits the native __str__ method inside Bebida, replacing the console output with the
+        object's name.
