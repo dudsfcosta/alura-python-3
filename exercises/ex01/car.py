@@ -10,4 +10,4 @@ class Car(Vehicle):
         return 'on.' if self._status else 'off.'
 
     def __str__(self):
-        return f'{self._manufacturer} {self._model} - Doors: {self._doors} - Status: {self.status}'
+        return f'{self._manufacturer} {self._model} - Doors: {self._doors} - Status: {self._status}'

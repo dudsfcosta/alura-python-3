@@ -43,24 +43,13 @@ class Restaurante:
             avg_notas = round(sum_notas/qtd_notas, 1)
             return avg_notas
 
-    # def adicionar_bebida_no_cardapio(self, bebida):
-        # self._cardapio.append(bebida)
-
-    # def adicionar_prato_no_cardapio(self, prato):
-        # self._cardapio.append(prato)
-
     def adicionar_no_cardapio(self, item):
         if isinstance(item, ItemCardapio):
             self._cardapio.append(item)
 
-    @property
     def exibir_cardapio(self):
         print(f'Cardapio do restaurante {self._nome}\n')
         for i,item in enumerate(self._cardapio,start=1):
-            # print(item)
-            # print(type(item))
-            # if hasattr(item, '_descricao'):
-                # print(item._descricao)
             if hasattr(item,'_descricao'):
                 mensagem_prato = f'{i}. Nome: {item._nome} | Preço: R${item._preco} | Descrição: {item._descricao}'
                 print(mensagem_prato)

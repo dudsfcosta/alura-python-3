@@ -1,0 +1,47 @@
+1. Herança
+    1.1. Criando a classe ItemCardapio
+        Nesse estudo, os instrutores Laís e Guilherme) criam três classes: ItemCardapio, Prato e Bebida. Eles definem um
+        método construtor para ItemCardapio mas não especificam parâmetros para Prato e Bebida. Porém, os professores
+        pontuam que Prato e Bebida têm propriedades identicas de ItemCardapio, e isso então leva para o próximo tópico,
+        sobre herança.
+
+    1.2. Herança
+        Guilherme explica que para fazer Prato um filho de ItemCardapio, é necessário incluir o nome da classe-pai den-
+        tro de parênteses ao lado do nome da classe filha. Dentro da função __init__ do filho, deve-se usar a função
+        super().__init__(var1, var2) para que se inicialize as variáveis do pai. No entanto, as propriedades de cada fi-
+        lho deve ser inicializada separadamente.
+
+    1.3. Acessando os itens do cardápio
+        Com as classes prontas para uso, Laís as importa para a classe app.py e instancia dois objetos: suco de melancia
+        e pãozinho. Guilherme sugere melhorar a saída definindo um método print diferente. Então ele edita a função na-
+        tiva de python __str__ dentro de Bebida e substitui a saída do objeto pelo seu nome no console.
+
+2. Polimnorfisrno e método abstrato
+    2.1. Métodos para adicionar itens
+        To begin this module, Laís suggests the program is ready for a menu, built inside restaurante.py. She creates a
+        variable named self._cardapio inside the Restaurante class constructor. Additionally, she creates two functions
+        (adicionar_bebida_no_cardapio and adicionar_prato_no_cardapio) without importing any classes.
+
+    2.2. Refatoração
+        Laís points out that the code is too repetitive. Guilherme adds that, considering an application evolving over
+        time, a menu should also include desserts and promotions. Therefore, having a function for each item wouldn't be
+         practical. With this in mind, the teachers create a new function called adicionar_no_cardapio to replace
+         adicionar_bebida_no_cardapio and adicionar_prato_no_cardapio. They use Python's built-in function isinstance to
+          verify if an added item is an instance of ItemCardapio. Afterwards, Laís imports the ItemCardapio class into
+          Restaurante.py and instantiates two items from ItemCardapio in app.py.
+
+    2.3. Exibindo o cardápio
+        The teachers create a new function inside the Restaurante class, called exibir_cardapio. This function uses the
+        hasattr method to check if an item has attributes from the Bebida or Prato class, and prints it accordingly in
+        the console. The function is then called in app.py.
+
+    2.4. Métodos abstratos
+        Now, there's a desire to apply discounts to items, with each item having a different discount. Since it's not
+        only Bebida or Prato that will apply a discount, classes derived from ItemCardapio need access to the same
+        function. For this, Guilherme suggests using an abstract class. This class isn't accessed directly by
+        ItemCardapio, and it's necessary to import the classes ABC and abstractmethod. However, each child class must
+        implement the abstract method; otherwise, the program will crash.
+
+    2.5. Polimorfismo
+        Com a função aplicar_desconto sendo declarada em ItemCardapio, é possível fazer uma declaração personalizada pa-
+        ra Prato e Bebida. Esse comportamento é o que se chama de polimorfismo.
